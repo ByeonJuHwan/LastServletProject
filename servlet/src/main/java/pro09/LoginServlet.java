@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
 		String user_email = request.getParameter("user_email");
 		String user_hp = request.getParameter("user_hp");
 		
+		
 		String data="안녕하세요!!<br> 로그인하셨습니다.<br><br>";
 		data+="<html><body>";
 		data+="아이디 : "+user_id;
