@@ -49,6 +49,7 @@ public class LoginServlet extends HttpServlet {
 		data+="휴대전화 :"+user_hp;
 		data+="</body></html>";
 		out.print(data);
+		
 			
 	}
 
