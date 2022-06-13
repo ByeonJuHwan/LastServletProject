@@ -2,6 +2,7 @@ package pro09;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -48,9 +49,17 @@ public class LoginServlet extends HttpServlet {
 		data+="email :"+user_email;
 		data+="<br>";
 		data+="휴대전화 :"+user_hp;
+		data+="<br>";
 		data+="</body></html>";
 		out.print(data);
 		
+		
+		user_address = URLEncoder.encode(user_address, "utf-8");
+		
+		out.print("<a href='/servlet/second?user_id="+user_id+"&user_pwd="+user_pwd+"&user_address="+user_address+"'>두 번째 서블릿으로 보내기</a>");
+		
+		data="</body></html>";
+		out.print(data);
 			
 	}
 
