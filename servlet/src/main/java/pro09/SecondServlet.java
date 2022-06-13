@@ -17,13 +17,13 @@ public class SecondServlet extends HttpServlet {
 
 	
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		
 		System.out.println("call init method");
 	}
 
 	
 	public void destroy() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("call destroy method");
 	}
 
