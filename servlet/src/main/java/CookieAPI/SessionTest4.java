@@ -40,7 +40,8 @@ public class SessionTest4 extends HttpServlet {
 			
 			if(user_id != null) {
 				session.setAttribute("user_id", user_id);
-				out.print("<a href='login'>로그인상태 확인</a>");
+				String url = response.encodeURL("login");
+				out.print("<a href="+url+">로그인상태 확인</a>");
 			}else {
 				out.print("<a href='login2.html'>다시 로그인해주세요!</a>");
 				session.invalidate();
