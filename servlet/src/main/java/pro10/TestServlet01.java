@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/first/test")
 public class TestServlet01 extends HttpServlet {
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			request.setCharacterEncoding("utf-8");
+			//request.setCharacterEncoding("utf-8");
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			
