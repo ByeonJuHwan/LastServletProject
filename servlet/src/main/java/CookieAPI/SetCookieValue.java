@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/set")
+//@WebServlet("/set")
 public class SetCookieValue extends HttpServlet {
 	
 
