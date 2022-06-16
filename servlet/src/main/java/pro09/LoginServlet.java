@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/login")public class LoginServlet extends HttpServlet {
+//@WebServlet("/login")public class LoginServlet extends HttpServlet {
 	
 
 	

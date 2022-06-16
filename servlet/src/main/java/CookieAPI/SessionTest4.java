@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet("/login")
+//@WebServlet("/login")
 public class SessionTest4 extends HttpServlet {
 	
 
