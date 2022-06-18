@@ -17,7 +17,7 @@ public class EncoderFilter implements Filter {
 
 	
 	public void destroy() {
-		
+		System.out.println("destroy 호");
 	}
 
 	
@@ -31,9 +31,11 @@ public class EncoderFilter implements Filter {
 					+"\n URI 정보"+pathinfo
 					+"\n 물리적 경로 :"+realPath;
 		System.out.println(mesg);
+		long begin = System.currentTimeMillis();
 		chain.doFilter(request, response);
 		
-		
+		long end = System.currentTimeMillis();
+		System.out.println("작업 시간 :"+(end-begin)+"ms");
 	
 	
 	}
