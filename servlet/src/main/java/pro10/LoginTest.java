@@ -14,12 +14,12 @@ import jakarta.servlet.http.HttpServletResponse;
 public class LoginTest extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
+		//request.setCharacterEncoding("utf-8");
+		//response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
-		String user_name = request.getParameter("user_name");
-		String user_pw = request.getParameter("user_pw");
+		String user_name = request.getParameter("user_id");
+		String user_pw = request.getParameter("user_pwd");
 		
 		out.print("<html><body>");
 		out.print("이름은 "+user_name+"<br>");

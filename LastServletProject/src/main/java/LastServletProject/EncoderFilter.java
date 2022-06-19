@@ -24,6 +24,7 @@ public class EncoderFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("doFilter 호출");
 		request.getParameter("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		String context = ((HttpServletRequest)request).getContextPath();
 		String pathinfo = ((HttpServletRequest)request).getRequestURI();
 		String realPath = request.getRealPath(pathinfo);
@@ -31,12 +32,11 @@ public class EncoderFilter implements Filter {
 					+"\n URI 정보"+pathinfo
 					+"\n 물리적 경로 :"+realPath;
 		
-	
 	}
 
 	
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("init 메서드 호");
+		System.out.println("init 메서드 호출");
 	}
 
 }

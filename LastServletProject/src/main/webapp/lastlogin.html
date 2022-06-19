@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 창</title>
+<style>
+    .div{
+        width: auto;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = pageLodad;
+    function pageLodad(){
+        notShowPop = getCookieValue();
+
+        if(notShowPop!="true"){
+            window.open ("popUp.html","pop","width=400,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no");
+        }
+    }
+    function getCookieValue(){
+        var result = "false";
+        if(document.cookie != ""){
+            cookie = document.cookie.split(";");
+            for(var i=0; i<cookie.length; i++){
+                element = cookie[i].split("=");
+                value = element[0];
+                vlaue = vlaue.replace(/^\s*/,'');
+
+                if(value=="notShowPop"){
+                    result = element[1];
+                }
+            }
+        }
+        return result;
+    }
+
+
+
+</script>
+</head>
+<body>
+    <form name="lastlogin" method="post" action="Login" enctype="UTF-8">
+       <div>
+        <input type="text" placeholder="아이디" name="login_id" id="id"> <br>
+        <input type="password" placeholder="비밀번호" name="login_pw" id="pw"><br>
+        <button type="submit" value="로그인">로그인</button> 
+        <button value="회원가입" type="button" onclick="location.href='memberForm.html';">회원 가입</button>
+
+       </div>
+        
+
+
+    </form>
+</body>
+</html>
