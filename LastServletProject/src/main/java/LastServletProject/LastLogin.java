@@ -36,8 +36,8 @@ public class LastLogin extends HttpServlet {
 			String id = membervo.getId();
 			String pwd = membervo.getPwd();
 			String name = membervo.getName();
-			String email = membervo.getEmail();
-			Date joinDate = membervo.getJoinDate();
+			 String email = membervo.getEmail();
+			 Date joinDate = membervo.getJoinDate();
 			
 			out.print("<tr><td>"+id+"</td><td>"+pwd+"</td><td>"+name+"</td><td>"+ email+"</td><td>"+joinDate+"</td><tr>");
 			
