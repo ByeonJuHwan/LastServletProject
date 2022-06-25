@@ -60,6 +60,35 @@ public class LastMemberDAO {
 		}
 		return list;
 	}
+	
+	public void addMember(LastMemberVO membervo) {
+		try{
+			con = dataFactory.getConnection();
+			
+			String id = membervo.getId();
+			String pwd = membervo.getPwd();
+			String name = membervo.getName();
+			String email= membervo.getEmail();
+			Date joinDate = membervo.getJoinDate();
+			
+			String query = "insert into byeon_member";
+			query+= "(id,pwd,name,email)";
+			query+="values(?,?,?,?)";
+			System.out.println("preparedStatement :" + query);
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setString(1, name);
+			pstmt.setString(2, pwd);
+			pstmt.setString(3, name);
+			pstmt.setString(4, email);
+			
+			pstmt.executeQuery();
+			pstmt.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 	
 }
