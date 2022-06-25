@@ -9,5 +9,9 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="/Users/byeonjuhwan/Desktop/자바/apache-tomcat-10.0.22/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/byeonjuhwan/Desktop/자바/ojdbc8-full/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="/Users/byeonjuhwan/Desktop/자바/ojdbc8-full/osdt_cert.jar"/>
+	<classpathentry kind="lib" path="/Users/byeonjuhwan/Desktop/자바/ojdbc8-full/osdt_core.jar"/>
+	<classpathentry kind="lib" path="/Users/byeonjuhwan/Desktop/자바/ojdbc8-full/oraclepki.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
