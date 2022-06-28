@@ -59,5 +59,43 @@ public class byeonDAO {
 		return list;
 		
 	}
+	public void delMember(String id) {
+		try {
+			con=dataFactory.getConnection();
+			String query = "delete from byeon_member"+"where id=?";
+			pstmt=con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			pstmt.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
+	public void addMember(byeonVO byeonvo) {
+		
+		try {
+			con=dataFactory.getConnection();
+			String id = byeonvo.getId();
+			String pwd = byeonvo.getPwd();
+			String name = byeonvo.getName();
+			String email = byeonvo.getEmail();
+			String query = "insert into byeon_member";
+			query+="(id,pwd,name,email)";
+			query+="values(?,?,?,?)";
+			
+			pstmt=con.prepareStatement(query);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			pstmt.setString(3, name);
+			pstmt.setString(4, email);
+			
+			pstmt.executeUpdate();
+			pstmt.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }
