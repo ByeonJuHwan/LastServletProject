@@ -26,7 +26,7 @@ public class byeonDAO {
 		}
 	}
 	public List<byeonVO> listMembers(){
-		List<byeonVO> list = new ArrayList();
+		List<byeonVO> list = new ArrayList<byeonVO>();
 		try {
 			con=dataFactory.getConnection();
 			String query = "select * from byeon_member";
