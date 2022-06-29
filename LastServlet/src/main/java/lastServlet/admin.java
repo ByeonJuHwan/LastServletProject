@@ -27,6 +27,8 @@ public class admin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		byeonDAO dao = new byeonDAO();
 		String cancle  = request.getParameter("cancle");
+		String user_id = (String)request.getAttribute("id");
+		String user_pwd = (String)request.getAttribute("pwd");
 		
 		if(cancle!=null && cancle.equals("cancle")) {
 			String id =request.getParameter("id");
@@ -49,7 +51,7 @@ public class admin extends HttpServlet {
 			
 		}
 		out.print("</table></body></html>");
-		out.print("<a href='/LastServlet/memberFrom2.jsp'>접속자수 확인</a>"); //회원 관리하기가 아닌 접속자수로 변경
+		out.print("<a href='login?id?pwd="+user_id+user_pwd+"'>접속자수 확인</a>"); //회원 관리하기가 아닌 접속자수로 변경
 		
 	}
 

@@ -3,6 +3,7 @@ package lastServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,6 +25,10 @@ public class LastLogin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
+		request.setAttribute(id, pwd);
+		RequestDispatcher dispatch = request.getRequestDispatcher("admin"); // 1번
+		dispatch.forward(request, response); // 2번
+
 		if((id!=null&&id.equals("byeon"))&&(pwd!=null&&pwd.equals("0111"))) {
 			out.println("<html><body>");
 			out.println("<h1>관리자님 환영합니다!!</h1>");
