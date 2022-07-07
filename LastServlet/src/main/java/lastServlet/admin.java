@@ -3,8 +3,10 @@ package lastServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,8 +29,8 @@ public class admin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		byeonDAO dao = new byeonDAO();
 		String cancle  = request.getParameter("cancle");
-		String user_id = (String)request.getAttribute("id");
-		String user_pwd = (String)request.getAttribute("pwd");
+		
+	
 		
 		if(cancle!=null && cancle.equals("cancle")) {
 			String id =request.getParameter("id");
@@ -50,8 +52,13 @@ public class admin extends HttpServlet {
 			out.print("<tr><td>"+id+"</td><td>"+pwd+"</td><td>"+name+"</td><td>"+email+"</td><td>"+joinDate+"</td><td>"+"<a href='/LastServlet/admin?cancle=delMember&id="+id+"'>삭제</a></td></tr>");
 			
 		}
+		ServletContext context = getServletContext();
+		List member = (ArrayList)context.getAttribute("member");
+		String user_id = (String)member.get(0);
+		String user_pwd = (String)member.get(1);
+		
 		out.print("</table></body></html>");
-		out.print("<a href='login?id?pwd="+user_id+user_pwd+"'>접속자수 확인</a>"); //회원 관리하기가 아닌 접속자수로 변경
+		
 		
 	}
 

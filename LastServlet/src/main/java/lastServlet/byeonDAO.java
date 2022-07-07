@@ -96,6 +96,13 @@ public class byeonDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+	 public boolean isExisted(byeonVO byeonVO) {
+		 boolean result = false;
+		 String id = byeonVO.getId();
+		 String pwd = byeonVO.getPwd();
+		 
+	 }
 	}
 
 }

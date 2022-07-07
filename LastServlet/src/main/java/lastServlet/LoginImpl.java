@@ -4,10 +4,7 @@ import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;
 
-/**
- * Application Lifecycle Listener implementation class LoginImpl
- *
- */
+
 @WebListener
 public class LoginImpl implements HttpSessionListener {
 

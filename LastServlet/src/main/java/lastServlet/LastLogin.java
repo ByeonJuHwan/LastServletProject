@@ -2,8 +2,10 @@ package lastServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
-import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,9 +27,7 @@ public class LastLogin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
-		request.setAttribute(id, pwd);
-		RequestDispatcher dispatch = request.getRequestDispatcher("admin"); // 1번
-		dispatch.forward(request, response); // 2번
+		
 
 		if((id!=null&&id.equals("byeon"))&&(pwd!=null&&pwd.equals("0111"))) {
 			out.println("<html><body>");
@@ -38,6 +38,13 @@ public class LastLogin extends HttpServlet {
 			out.println("<input type='hidden' name='cancle' value='delMember'/>");
 			out.println("회원관리</button>");
 			out.println("</body></html>");
+			
+			ServletContext context = getServletContext();
+			List member = new ArrayList();
+			member.add(id);
+			member.add(pwd);
+			context.setAttribute("member", member);
+			
 			
 		}else {
 			out.print("<h1>"+id+"님 환영합니다!!</h1>");
